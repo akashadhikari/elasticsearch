@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostsController extends Controller
 {
@@ -23,7 +24,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -33,8 +34,24 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        dd($request);
+        $this->validate($request, array(
+                'title'         => 'required|max:255',
+                'body'          => 'required'
+            ));
+
+        //create a new model instance
+        $post = new Post; 
+
+        //set attributes on the Post model
+        $post->title = $request->title;
+        $post->body = $request->body;
+
+        //call the save method
+        $post->save();
+
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -45,7 +62,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.show')->withPost($post);
     }
 
     /**
