@@ -35,7 +35,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {   
-        dd($request);
+        
         $this->validate($request, array(
                 'title'         => 'required|max:255',
                 'body'          => 'required'
@@ -50,6 +50,7 @@ class PostsController extends Controller
 
         //call the save method
         $post->save();
+        
 
         return redirect()->route('posts.show', $post->id);
     }
