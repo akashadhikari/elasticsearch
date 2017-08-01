@@ -10,7 +10,7 @@
 
             <div class="panel panel-default">
 
-                <div class="panel-heading">{{$post->title}}</div>
+                <div class="panel-heading"><h3>{{$post->title}}</h3></div>
 
                 <div class="panel-body">
 
