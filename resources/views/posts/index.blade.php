@@ -30,17 +30,21 @@
 
     	<div class="col-md-8 col-md-offset-2">
 
+        @foreach($posts as $post)
+
             <div class="panel panel-default">
 
-                <div class="panel-heading">All posts</div>
+                <div class="panel-heading">{{$post->title}}</div>
 
-                <div class="panel-body">
+                <div class="panel-body">    
 
-                    All the posts you want to see
+                    {{$post->body}}
 
                 </div>
 
             </div>
+
+         @endforeach
 
         </div>
     	

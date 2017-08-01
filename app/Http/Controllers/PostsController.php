@@ -14,7 +14,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('posts.index');
+        //show all posts in /posts
+
+        $posts = Post::all();
+        return view('posts.index')->withPosts($posts);
     }
 
     /**
@@ -35,22 +38,26 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {   
-        
+        //validate the attributes
+
         $this->validate($request, array(
                 'title'         => 'required|max:255',
                 'body'          => 'required'
             ));
 
         //create a new model instance
+
         $post = new Post; 
 
         //set attributes on the Post model
+
         $post->title = $request->title;
         $post->body = $request->body;
 
         //call the save method
-        $post->save();
         
+        $post->save();
+
 
         return redirect()->route('posts.show', $post->id);
     }
@@ -63,6 +70,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
+        //show specific post by $id in /posts/{id}
+        
         $post = Post::find($id);
         return view('posts.show')->withPost($post);
     }
