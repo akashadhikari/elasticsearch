@@ -10,15 +10,15 @@
 
 		    <form class="input-group" role="search" action="{{ route('search.result') }}">
 
-		      <input type="text" name="query" class="form-control" placeholder="Search for...">
+              <input type="text" name="query" class="form-control" placeholder="Search for...">
 
-		      <span class="input-group-btn">
+              <span class="input-group-btn">
 
-		        <button class="btn btn-primary" type="submit">Go!</button>
+                <button class="btn btn-primary" type="submit">Go!</button>
 
-		      </span>
+              </span>
 
-		    </form><!-- /input-group -->
+            </form><!-- /search form -->
 
 		  </div><!-- /col-md-8 col-md-offset-2 -->
 
@@ -30,21 +30,21 @@
 
     	<div class="col-md-8 col-md-offset-2">
 
-        @foreach($posts as $post)
+        {{-- @foreach($posts as $post) --}}
 
             <div class="panel panel-default">
 
-                <div class="panel-heading"><h3>{{$post->title}}</h3></div>
+                <div class="panel-heading"><h3>Title</h3></div>
 
                 <div class="panel-body">    
 
-                    {{$post->body}}
+                    Body
 
                 </div>
 
             </div>
 
-         @endforeach
+        {{-- @endforeach --}}
 
         </div>
     	

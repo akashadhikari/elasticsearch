@@ -20,3 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts', 'PostsController');
+
+Route::get('/search', [
+	'uses' => 'SearchController@result',
+	'as' => 'search.result'
+	]);
