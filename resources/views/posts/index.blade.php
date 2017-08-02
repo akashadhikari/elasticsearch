@@ -18,7 +18,7 @@
 
 		      </span>
 
-		    </form><!-- /input-group -->
+		    </form><!-- /search form -->
 
 		  </div><!-- /col-md-8 col-md-offset-2 -->
 

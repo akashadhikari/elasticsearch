@@ -8,6 +8,8 @@
     	
 		  <div class="col-md-8 col-md-offset-2">
 
+          <h3>Your search for {{ Request::input('query') }} </h3>
+
 		    <form class="input-group" role="search" action="{{ route('search.result') }}">
 
               <input type="text" name="query" class="form-control" placeholder="Search for...">
@@ -30,25 +32,33 @@
 
     	<div class="col-md-8 col-md-offset-2">
 
-        {{-- @foreach($posts as $post) --}}
+            @if (!$posts->count())
 
-            <div class="panel panel-default">
+            No results found
 
-                <div class="panel-heading"><h3>Title</h3></div>
+            @else
 
-                <div class="panel-body">    
+                @foreach($posts as $post)
 
-                    Body
+                    <div class="panel panel-default">
 
-                </div>
+                        <div class="panel-heading"><h3>{{$post->title}}</h3></div>
 
-            </div>
+                        <div class="panel-body">    
 
-        {{-- @endforeach --}}
+                            {{$post->body}}
+
+                        </div>
+
+                    </div>
+
+                @endforeach
+
+            @endif
 
         </div>
     	
-    </div>
+    </div>  
     
 </div>
 
