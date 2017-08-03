@@ -8,11 +8,11 @@
     	
 		  <div class="col-md-8 col-md-offset-2">
 
-          <h3>Your search for '{{ Request::input('query') }}'' </h3>
+          <h3>Your ElasticSearch</h3>
 
-		    <form class="input-group" role="search" action="{{ route('search.result') }}">
+		    <form class="input-group" role="search" action="{{ route('elastic.result') }}">
 
-              <input type="text" name="query" class="form-control" placeholder="Search for...">
+              <input type="text" name="query" class="form-control" placeholder="Search elastic...">
 
               <span class="input-group-btn">
 
@@ -34,7 +34,7 @@
 
             @if (!$posts->count())
 
-            Your search '{{ Request::input('query') }}' did not match any documents. Try searching with proper keywords.
+            Your elastic search '{{ Request::input('query') }}' did not match any documents. Try searching with proper keywords.
 
             @else
 

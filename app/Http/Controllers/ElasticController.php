@@ -6,16 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
-class SearchController extends Controller
+class ElasticController extends Controller
 {
     public function result(Request $request)
     {
     	$query= $request->input('query');
 
-		if(!$query) {
+		// if(!$query) {
 
-			return redirect()->route('home');
-		}
+		// 	return redirect()->route('home');
+		// }
 		
 		//search is based on posts title or body
 
@@ -25,7 +25,7 @@ class SearchController extends Controller
 
 		->get();
 
-		return view('search.result')->withPosts($posts);
+		return view('elastic.result')->withPosts($posts);
 
     }
 }
