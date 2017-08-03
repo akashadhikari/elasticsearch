@@ -12,8 +12,12 @@
 
                 <div class="panel-heading">Dashboard</div>
 
-                You are logged in!
-                
+                <div class="panel-body">
+
+                    You are logged in!
+
+                </div>
+
             </div>
 
         </div>

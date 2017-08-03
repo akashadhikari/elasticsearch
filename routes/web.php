@@ -38,3 +38,11 @@ Route::get('/elastic', [
 	'as' => 'elastic.result'
 
 	]);
+
+Route::get('/elasticsearch', function() {
+
+	$client =  Elasticsearch\ClientBuilder::create()->build();
+
+	dd($client);
+
+ });
