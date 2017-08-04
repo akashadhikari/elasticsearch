@@ -43,6 +43,30 @@ Route::get('/elasticsearch', function() {
 
 	$client =  Elasticsearch\ClientBuilder::create()->build();
 
-	dd($client);
+	$allPosts = DB::table('posts')->get();
+
+	// return $allPosts;
+
+	$results = $client->search([
+
+		"index" => "{{ $allPosts }}",
+
+		"body" => [
+
+			"query" => [
+
+				"match"=> [
+
+					"_all" => "Eloquent"
+
+				]
+
+			]
+
+		]
+
+	]);
+
+	return $results;
 
  });
