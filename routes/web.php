@@ -49,7 +49,7 @@ Route::get('/elasticsearch', function() {
 
 	$results = $client->search([
 
-		"index" => "{{ $allPosts }}",
+		"index" => "posts",
 
 		"body" => [
 
