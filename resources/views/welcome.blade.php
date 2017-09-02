@@ -140,6 +140,8 @@
                     Elastic
 
                 </div>
+                <a href="{{ url('/posts') }}">Try Normal</a> |
+                <a href="{{ url('/elastic') }}">Go Elastic</a>
 
             </div>
 
