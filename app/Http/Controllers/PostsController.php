@@ -48,7 +48,9 @@ class PostsController extends Controller
 
                 'title'         => 'required|max:255',
 
-                'body'          => 'required'
+                'body'          => 'required',
+
+                'keyword'       => 'required|max:255',
             ));
 
         //create a new model instance
@@ -60,6 +62,8 @@ class PostsController extends Controller
         $post->title = $request->title;
 
         $post->body = $request->body;
+
+        $post->keyword = $request->keyword;
 
         //call the save method
         

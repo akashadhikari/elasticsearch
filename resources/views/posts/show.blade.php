@@ -12,6 +12,8 @@
 
                 <div class="panel-heading"><h3>{{$post->title}}</h3></div>
 
+                {{$post->keyword}}
+
                 <div class="panel-body">
 
                     {{$post->body}}

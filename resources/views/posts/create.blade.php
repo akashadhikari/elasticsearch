@@ -28,6 +28,16 @@
 
 	  </div>
 
+	  <div class="form-group">
+
+	    <label for="keyword">Keywords</label>
+
+    	<input type="text" class="form-control" id="keyword" name="keyword">
+
+	    <small id="textHelp" class="form-text text-muted">Eg: cat, dog, animals</small>
+
+	  </div>
+
 	  
 	  <button type="submit" class="btn btn-primary">Submit</button>
 
