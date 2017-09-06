@@ -1,3 +1,13 @@
+<?php
+
+require_once '../vendor/autoload.php';
+
+$es = new Elasticsearch\ClientBuilder([
+  'hosts' => ['127.0.0.1:9200']
+]);
+
+?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -39,13 +49,12 @@
                 <div class="panel-body">
 
                     {{$post->body}}
+
                     <hr>
+
                     <b>Keywords:</b> {{ $post->keyword }}
 
-
                 </div>
-
-               
 
             </div>
 

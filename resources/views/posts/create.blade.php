@@ -1,3 +1,39 @@
+<?php
+
+require_once '../vendor/autoload.php';
+
+$es = new Elasticsearch\ClientBuilder([
+  'hosts' => ['127.0.0.1:9200']
+]);
+
+if(!empty($_POST)) {
+
+	if(isset($_POST['title'], $_POST['body'], $_POST['keyword'])) {
+
+		$title = $_POST['title'];
+		$body = $_POST['body'];
+		$keyword = explode(',', $_POST['keyword']);
+
+		$indexed = $es->index([
+
+			'index' => 'posts',
+			'type' => 'post',
+			'body' => [
+				'title' => $title,
+				'body' => $body,
+				'keyword' => $keywords
+				]
+			]);
+
+		if($indexed) {
+			print_r($indexed);
+		}
+
+	}
+}
+
+?>
+
 @extends('layouts.app')
 
 @section('content')
